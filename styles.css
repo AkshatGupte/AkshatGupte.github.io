@@ -1,14 +1,14 @@
 /* ===== Base ===== */
 :root {
-  --bg: #17335c;
-  --bg-alt: #1b3a68;
-  --card: rgba(30, 63, 109, 0.72);
+  --bg: #0a0a0d;
+  --bg-alt: #16131e;
+  --card: #121017;
   --line: rgba(255, 255, 255, 0.13);
   --line-strong: rgba(255, 255, 255, 0.3);
-  --text: #dbe6f3;
-  --text-dim: #a7bcd6;
+  --text: #ddd8e6;
+  --text-dim: #9e97ad;
   --heading: #ffffff;
-  --accent: #a9cdf2;
+  --accent: #b98cff;
   --serif: "Newsreader", Georgia, serif;
   --sans: "IBM Plex Sans", system-ui, sans-serif;
   --mono: "IBM Plex Mono", monospace;
@@ -38,6 +38,22 @@ body::after {
   content: ""; position: fixed; inset: 0; z-index: 50; pointer-events: none;
   opacity: 0.045;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Content sits on opaque panels so the dithered backdrop stays behind the words.
+   Applied to layout containers rather than individual text elements, so the
+   panel edges align to the grid instead of following ragged line lengths. */
+.hero-text, .section-head, .about-text, .about-grid aside,
+.feature-list, .contact-panel, .footer p, .btn-outline {
+  background: var(--bg);
+}
+
+/* Negative side margins cancel the padding, so the panel bleeds outward
+   without shifting where the text actually sits. */
+.hero-text, .section-head, .about-text, .about-grid aside, .contact-panel {
+  padding: 22px 26px;
+  margin-left: -26px;
+  margin-right: -26px;
 }
 
 .container { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
@@ -71,12 +87,12 @@ h1, h2, h3, .modal-title { font-family: var(--serif); font-weight: 400; letter-s
 .btn {
   display: inline-block; padding: 11px 24px; border-radius: 3px;
   font-family: var(--sans); font-weight: 500; font-size: 0.92rem;
-  background: var(--accent); color: #12294a;
+  background: var(--accent); color: #0a0a0d;
   border: 1px solid var(--accent);
 }
-.btn:hover { background: #cfe3f8; border-color: #cfe3f8; text-decoration: none; }
+.btn:hover { background: #cdadff; border-color: #cdadff; text-decoration: none; }
 .btn-outline { background: transparent; color: var(--text); border-color: var(--line-strong); }
-.btn-outline:hover { background: rgba(255, 255, 255, 0.07); border-color: var(--text); color: var(--heading); }
+.btn-outline:hover { background: var(--bg-alt); border-color: var(--text); color: var(--heading); }
 .btn-small { padding: 7px 16px !important; font-size: 0.84rem; }
 .btn-big { padding: 14px 34px; font-size: 1rem; }
 
@@ -119,7 +135,7 @@ h1, h2, h3, .modal-title { font-family: var(--serif); font-weight: 400; letter-s
 .section-head.centered .section-title { justify-content: center; }
 
 /* ===== About ===== */
-.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px 68px; align-items: start; }
 .about-text p { margin-bottom: 18px; }
 .about-text p:last-child { margin-bottom: 0; }
 .about-lead { font-family: var(--serif); font-size: 1.3rem; line-height: 1.55; color: var(--heading); }
@@ -146,7 +162,7 @@ h1, h2, h3, .modal-title { font-family: var(--serif); font-weight: 400; letter-s
 }
 
 /* ===== Projects ===== */
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
 .project-card { padding: 26px; display: flex; flex-direction: column; cursor: pointer; }
 .project-card:hover, .project-card:focus-visible { border-color: var(--line-strong); outline: none; }
 .project-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; gap: 16px; }
@@ -181,7 +197,7 @@ h1, h2, h3, .modal-title { font-family: var(--serif); font-weight: 400; letter-s
   display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: baseline;
   padding: 22px 4px; border-bottom: 1px solid var(--line); color: var(--text);
 }
-.feature-row:hover { background: rgba(255, 255, 255, 0.04); text-decoration: none; }
+.feature-row:hover { background: var(--bg-alt); text-decoration: none; }
 .feature-row .project-index { white-space: nowrap; }
 .feature-row h3 { font-size: 1.2rem; color: var(--heading); }
 .feature-row p { font-size: 0.92rem; color: var(--text-dim); margin-top: 4px; }
@@ -210,7 +226,7 @@ h1, h2, h3, .modal-title { font-family: var(--serif); font-weight: 400; letter-s
 .modal-overlay {
   position: fixed; inset: 0; z-index: 200;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(9, 24, 45, 0.88);
+  background: rgba(5, 4, 8, 0.9);
   padding: 24px;
 }
 .modal-overlay[hidden] { display: none; }
@@ -240,7 +256,7 @@ body.modal-open { overflow: hidden; }
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .about-grid { grid-template-columns: 1fr; gap: 36px; }
-  .skills-grid { grid-template-columns: 1fr; }
+  .skills-grid, .projects-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
