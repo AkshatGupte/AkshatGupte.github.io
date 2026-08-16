@@ -1,15 +1,15 @@
 /* ===== Base ===== */
 :root {
-  --bg: #0a0f1c;
-  --bg-alt: #101828;
-  --card: #131c30;
-  --border: #1e2a45;
-  --text: #cdd6e8;
-  --text-dim: #8b98b3;
-  --heading: #eef2fa;
-  --accent: #4f8cff;
-  --accent-2: #38e1c6;
-  --grad: linear-gradient(120deg, #4f8cff, #38e1c6);
+  --bg: #07111f;
+  --bg-alt: #0c1a33;
+  --card: #102547;
+  --border: #24406b;
+  --text: #d6e7ff;
+  --text-dim: #9ab0cf;
+  --heading: #f7fbff;
+  --accent: #6ea8ff;
+  --accent-2: #9fd5ff;
+  --grad: linear-gradient(135deg, #6ea8ff 0%, #86bdff 45%, #b7e2ff 100%);
   --mono: "JetBrains Mono", monospace;
 }
 
@@ -19,7 +19,10 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top, rgba(110, 168, 255, 0.18), transparent 35%),
+    radial-gradient(circle at 85% 15%, rgba(159, 213, 255, 0.1), transparent 28%),
+    linear-gradient(180deg, #07111f 0%, #0b1830 55%, #07111f 100%);
   color: var(--text);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -33,7 +36,7 @@ a { color: var(--accent); text-decoration: none; }
 /* ===== Nav ===== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(10, 15, 28, 0.85);
+  background: rgba(7, 17, 31, 0.88);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
@@ -166,7 +169,7 @@ a { color: var(--accent); text-decoration: none; }
 }
 .project-card:hover, .project-card:focus-visible {
   transform: translateY(-6px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 24px rgba(79, 140, 255, 0.2);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42), 0 0 24px rgba(110, 168, 255, 0.24);
   animation-duration: 1.6s; /* comet speeds up on hover */
   outline: none;
 }
@@ -204,7 +207,7 @@ a { color: var(--accent); text-decoration: none; }
 }
 .tags li {
   font-family: var(--mono); font-size: 0.72rem; color: var(--accent-2);
-  background: rgba(56, 225, 198, 0.08); border: 1px solid rgba(56, 225, 198, 0.25);
+  background: rgba(159, 213, 255, 0.08); border: 1px solid rgba(159, 213, 255, 0.26);
   padding: 3px 10px; border-radius: 999px;
 }
 .tags.big li { font-size: 0.82rem; padding: 5px 14px; }
@@ -238,7 +241,7 @@ a { color: var(--accent); text-decoration: none; }
 .modal-overlay {
   position: fixed; inset: 0; z-index: 200;
   display: flex; align-items: center; justify-content: center;
-  background: rgba(5, 8, 16, 0.75); backdrop-filter: blur(6px);
+  background: rgba(4, 12, 25, 0.78); backdrop-filter: blur(6px);
   padding: 24px;
   animation: overlay-in .25s ease;
 }

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshat Gupte — Projects</title>
+  <meta name="description" content="Selected projects by Akshat Gupte — research, agentic systems, data exploration, and fine-tuned LLMs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">AG<span class="accent">.</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#top">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact" class="btn btn-small">Contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Selected work</p>
+        <h1>Projects<span class="accent">.</span></h1>
+        <h2 class="hero-sub">Current research and engineering work.</h2>
+        <p class="hero-desc">
+          A focused collection of projects I am actively using to explore model
+          interpretability, agentic workflows, data systems, and fine-tuned LLMs.
+        </p>
+        <div class="hero-cta">
+          <a href="index.html" class="btn">Back to Home</a>
+          <a href="https://github.com/AkshatGupte?tab=repositories" class="btn btn-outline" target="_blank" rel="noopener">GitHub Repos</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="avatar-ring">
+          <img src="https://avatars.githubusercontent.com/u/167355858?v=4" alt="Akshat Gupte" class="avatar" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="accent">01.</span> Current Projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card featured" data-project="temporal" tabindex="0">
+          <div class="project-top">
+            <span class="folder-icon">🔬</span>
+            <div class="project-links">
+              <a href="https://github.com/AkshatGupte/Research_Temporal_Mechanisms" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <h3>Temporal Attention Mechanisms</h3>
+          <p>Research on whether transformer attention weights reflect genuine clinical reasoning on MIMIC-IV ICU records.</p>
+          <ul class="tags">
+            <li>Research</li><li>Interpretability</li><li>MIMIC-IV</li><li>SHAP</li>
+          </ul>
+        </article>
+
+        <article class="project-card featured" data-project="worldcup2026" tabindex="0">
+          <div class="project-top">
+            <span class="folder-icon">⚽</span>
+            <div class="project-links">
+              <a href="https://world-cup-data-explorer.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
+              <a href="https://github.com/AkshatGupte/WorldCup-DataExplorer" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <h3>World Cup 2026 Data Explorer</h3>
+          <p>Natural-language analytics tool with a multi-stage NL-to-SQL pipeline and resilient LLM routing.</p>
+          <ul class="tags">
+            <li>NL-to-SQL</li><li>SQLite</li><li>Plotly.js</li><li>Failover</li>
+          </ul>
+        </article>
+
+        <article class="project-card featured" data-project="pokemon" tabindex="0">
+          <div class="project-top">
+            <span class="folder-icon">🎮</span>
+            <div class="project-links">
+              <a href="https://huggingface.co/Rendred/vgc-critique-qlora" target="_blank" rel="noopener">Model ↗</a>
+            </div>
+          </div>
+          <h3>Competitive Pokémon Team-Critique LLM</h3>
+          <p>QLoRA fine-tuned 7B model that critiques Pokémon teams with fact-checked, grounded feedback.</p>
+          <ul class="tags">
+            <li>Qwen2.5</li><li>QLoRA</li><li>Evaluation</li><li>Fact Checking</li>
+          </ul>
+        </article>
+
+        <article class="project-card" data-project="mltester" tabindex="0">
+          <div class="project-top">
+            <span class="folder-icon">🧪</span>
+            <div class="project-links">
+              <a href="https://github.com/AkshatGupte/ML-Experiment-Tester" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+          <h3>ML Experiment Hypothesis Tester</h3>
+          <p>An agentic experimentation framework that turns model failures into falsifiable debugging hypotheses.</p>
+          <ul class="tags">
+            <li>Agentic ML</li><li>Debugging</li><li>Hypotheses</li><li>Drift</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="modal-overlay" id="project-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-header">
+        <span class="modal-icon"></span>
+        <h3 id="modal-title" class="modal-title"></h3>
+      </div>
+      <p class="modal-desc"></p>
+      <h4 class="modal-subhead">Key Highlights</h4>
+      <ul class="modal-features"></ul>
+      <ul class="tags modal-tags"></ul>
+      <div class="modal-actions"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Designed &amp; built by Akshat Gupte · © <span id="year"></span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
