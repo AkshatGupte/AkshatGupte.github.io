@@ -48,12 +48,10 @@ body::after {
   background: var(--bg);
 }
 
-/* Negative side margins cancel the padding, so the panel bleeds outward
-   without shifting where the text actually sits. */
+/* 26px matches the cards' padding, so panel edges line up with the card grid
+   below them and the text inside lines up with the card text. */
 .hero-text, .section-head, .about-text, .about-grid aside, .contact-panel {
   padding: 22px 26px;
-  margin-left: -26px;
-  margin-right: -26px;
 }
 
 .container { max-width: 1060px; margin: 0 auto; padding: 0 28px; }
@@ -124,18 +122,19 @@ h1, h2, h3, .modal-title { font-family: var(--serif); font-weight: 400; letter-s
 
 /* ===== Sections ===== */
 .section { padding: 76px 0; border-top: 1px solid var(--line); }
-.section-head { margin-bottom: 40px; max-width: 620px; }
+.section-head { margin-bottom: 40px; }
 .section-title {
   font-size: clamp(1.8rem, 3.4vw, 2.3rem); color: var(--heading);
   display: flex; align-items: baseline; gap: 14px;
 }
 .section-title .accent { font-family: var(--mono); font-size: 0.82rem; letter-spacing: 0.1em; }
-.section-lede { color: var(--text-dim); margin-top: 12px; }
+/* The panel spans the full column; only the reading measure is capped. */
+.section-lede { color: var(--text-dim); margin-top: 12px; max-width: 620px; }
 .section-head.centered { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head.centered .section-title { justify-content: center; }
 
 /* ===== About ===== */
-.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px 68px; align-items: start; }
+.about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px 20px; align-items: start; }
 .about-text p { margin-bottom: 18px; }
 .about-text p:last-child { margin-bottom: 0; }
 .about-lead { font-family: var(--serif); font-size: 1.3rem; line-height: 1.55; color: var(--heading); }
@@ -195,7 +194,7 @@ h1, h2, h3, .modal-title { font-family: var(--serif); font-weight: 400; letter-s
 .feature-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
 .feature-row {
   display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: baseline;
-  padding: 22px 4px; border-bottom: 1px solid var(--line); color: var(--text);
+  padding: 22px 26px; border-bottom: 1px solid var(--line); color: var(--text);
 }
 .feature-row:hover { background: var(--bg-alt); text-decoration: none; }
 .feature-row .project-index { white-space: nowrap; }
