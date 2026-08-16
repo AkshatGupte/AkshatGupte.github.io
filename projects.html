@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Akshat Gupte — Projects</title>
-  <meta name="description" content="Selected projects by Akshat Gupte — research, agentic systems, data exploration, and fine-tuned LLMs." />
+  <title>Akshat Gupte | Projects</title>
+  <meta name="description" content="Selected projects by Akshat Gupte, covering interpretability research, agentic systems, data exploration, and fine-tuned LLMs." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -41,9 +41,7 @@
         </div>
       </div>
       <div class="hero-visual">
-        <div class="avatar-ring">
-          <img src="https://avatars.githubusercontent.com/u/167355858?v=4" alt="Akshat Gupte" class="avatar" />
-        </div>
+        <img src="https://avatars.githubusercontent.com/u/167355858?v=4" alt="Akshat Gupte" class="avatar" />
       </div>
     </div>
   </section>
@@ -53,11 +51,10 @@
       <h2 class="section-title"><span class="accent">01.</span> Current Projects</h2>
       <div class="projects-grid">
 
-        <article class="project-card featured" data-project="temporal" tabindex="0">
+        <article class="project-card" data-project="temporal" tabindex="0">
           <div class="project-top">
-            <span class="folder-icon">🔬</span>
             <div class="project-links">
-              <a href="https://github.com/AkshatGupte/Research_Temporal_Mechanisms" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://github.com/AkshatGupte/Research_Temporal_Mechanisms" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
           <h3>Temporal Attention Mechanisms</h3>
@@ -65,14 +62,14 @@
           <ul class="tags">
             <li>Research</li><li>Interpretability</li><li>MIMIC-IV</li><li>SHAP</li>
           </ul>
+          <p class="card-hint">Click for details</p>
         </article>
 
-        <article class="project-card featured" data-project="worldcup2026" tabindex="0">
+        <article class="project-card" data-project="worldcup2026" tabindex="0">
           <div class="project-top">
-            <span class="folder-icon">⚽</span>
             <div class="project-links">
-              <a href="https://world-cup-data-explorer.vercel.app/" target="_blank" rel="noopener">Live ↗</a>
-              <a href="https://github.com/AkshatGupte/WorldCup-DataExplorer" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://world-cup-data-explorer.vercel.app/" target="_blank" rel="noopener">Live</a>
+              <a href="https://github.com/AkshatGupte/WorldCup-DataExplorer" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
           <h3>World Cup 2026 Data Explorer</h3>
@@ -80,13 +77,13 @@
           <ul class="tags">
             <li>NL-to-SQL</li><li>SQLite</li><li>Plotly.js</li><li>Failover</li>
           </ul>
+          <p class="card-hint">Click for details</p>
         </article>
 
-        <article class="project-card featured" data-project="pokemon" tabindex="0">
+        <article class="project-card" data-project="pokemon" tabindex="0">
           <div class="project-top">
-            <span class="folder-icon">🎮</span>
             <div class="project-links">
-              <a href="https://huggingface.co/Rendred/vgc-critique-qlora" target="_blank" rel="noopener">Model ↗</a>
+              <a href="https://huggingface.co/Rendred/vgc-critique-qlora" target="_blank" rel="noopener">Model</a>
             </div>
           </div>
           <h3>Competitive Pokémon Team-Critique LLM</h3>
@@ -94,20 +91,21 @@
           <ul class="tags">
             <li>Qwen2.5</li><li>QLoRA</li><li>Evaluation</li><li>Fact Checking</li>
           </ul>
+          <p class="card-hint">Click for details</p>
         </article>
 
         <article class="project-card" data-project="mltester" tabindex="0">
           <div class="project-top">
-            <span class="folder-icon">🧪</span>
             <div class="project-links">
-              <a href="https://github.com/AkshatGupte/ML-Experiment-Tester" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://github.com/AkshatGupte/ML-Experiment-Tester" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
           <h3>ML Experiment Hypothesis Tester</h3>
-          <p>An agentic experimentation framework that turns model failures into falsifiable debugging hypotheses.</p>
+          <p>An agentic experimentation framework that turns observed training failures into falsifiable hypotheses.</p>
           <ul class="tags">
-            <li>Agentic ML</li><li>Debugging</li><li>Hypotheses</li><li>Drift</li>
+            <li>Agentic ML</li><li>Debugging</li><li>Hypotheses</li>
           </ul>
+          <p class="card-hint">Click for details</p>
         </article>
 
       </div>
@@ -117,10 +115,7 @@
   <div class="modal-overlay" id="project-modal" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
       <button class="modal-close" aria-label="Close">&times;</button>
-      <div class="modal-header">
-        <span class="modal-icon"></span>
-        <h3 id="modal-title" class="modal-title"></h3>
-      </div>
+      <h3 id="modal-title" class="modal-title"></h3>
       <p class="modal-desc"></p>
       <h4 class="modal-subhead">Key Highlights</h4>
       <ul class="modal-features"></ul>
