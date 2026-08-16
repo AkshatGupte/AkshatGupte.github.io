@@ -7,17 +7,24 @@
   <meta name="description" content="Selected projects by Akshat Gupte, covering interpretability research, agentic systems, data exploration, and fine-tuned LLMs." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+    { "imports": { "three": "https://unpkg.com/three@0.169.0/build/three.module.js" } }
+  </script>
 </head>
 <body>
+
+  <div id="bg-field" aria-hidden="true"></div>
+
+  <div class="page">
 
   <header class="nav">
     <div class="nav-inner">
       <a href="index.html" class="logo">AG<span class="accent">.</span></a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="#top">Projects</a>
+        <a href="#work">Projects</a>
         <a href="index.html#skills">Skills</a>
         <a href="index.html#contact" class="btn btn-small">Contact</a>
       </nav>
@@ -28,12 +35,13 @@
   <section class="hero" id="top">
     <div class="container hero-grid">
       <div class="hero-text">
-        <p class="eyebrow">Selected work</p>
+        <p class="eyebrow">Selected Work</p>
         <h1>Projects<span class="accent">.</span></h1>
-        <h2 class="hero-sub">Current research and engineering work.</h2>
+        <h2 class="hero-sub">Research and engineering, with the numbers attached.</h2>
         <p class="hero-desc">
-          A focused collection of projects I am actively using to explore model
-          interpretability, agentic workflows, data systems, and fine-tuned LLMs.
+          Four projects I am actively working on, across model interpretability,
+          agentic workflows, data systems, and fine-tuned LLMs. Each one lists what
+          it does, what it measured, and where the source lives.
         </p>
         <div class="hero-cta">
           <a href="index.html" class="btn">Back to Home</a>
@@ -46,66 +54,102 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="work">
     <div class="container">
-      <h2 class="section-title"><span class="accent">01.</span> Current Projects</h2>
+      <div class="section-head">
+        <h2 class="section-title"><span class="accent">01</span> Current Projects</h2>
+        <p class="section-lede">Select any project for the full breakdown, including method and results.</p>
+      </div>
+
       <div class="projects-grid">
 
         <article class="project-card" data-project="temporal" tabindex="0">
           <div class="project-top">
+            <span class="project-index">01 / RESEARCH</span>
             <div class="project-links">
               <a href="https://github.com/AkshatGupte/Research_Temporal_Mechanisms" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
           <h3>Temporal Attention Mechanisms</h3>
-          <p>Research on whether transformer attention weights reflect genuine clinical reasoning on MIMIC-IV ICU records.</p>
-          <ul class="tags">
-            <li>Research</li><li>Interpretability</li><li>MIMIC-IV</li><li>SHAP</li>
+          <p>
+            Evaluated whether the attention weights of different transformer
+            architectures reflect genuine clinical reasoning, or merely correlate with
+            the outcome, across MIMIC-IV ICU records.
+          </p>
+          <ul class="metrics">
+            <li><span class="metric-num">0.869</span><span class="metric-label">AUROC</span></li>
+            <li><span class="metric-num">65k+</span><span class="metric-label">Patient records</span></li>
           </ul>
-          <p class="card-hint">Click for details</p>
+          <ul class="tags">
+            <li>Interpretability</li><li>MIMIC-IV</li><li>SHAP</li><li>BigQuery</li>
+          </ul>
+          <p class="card-hint">Read the breakdown</p>
         </article>
 
         <article class="project-card" data-project="worldcup2026" tabindex="0">
           <div class="project-top">
+            <span class="project-index">02 / PRODUCT</span>
             <div class="project-links">
               <a href="https://world-cup-data-explorer.vercel.app/" target="_blank" rel="noopener">Live</a>
               <a href="https://github.com/AkshatGupte/WorldCup-DataExplorer" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
           <h3>World Cup 2026 Data Explorer</h3>
-          <p>Natural-language analytics tool with a multi-stage NL-to-SQL pipeline and resilient LLM routing.</p>
+          <p>
+            A natural-language analytics tool that lets non-technical users query match
+            and player data conversationally, backed by a multi-stage NL-to-SQL pipeline
+            that validates and retries its own output.
+          </p>
+          <ul class="metrics">
+            <li><span class="metric-num">4</span><span class="metric-label">LLM providers</span></li>
+            <li><span class="metric-num">2</span><span class="metric-label">SQLite databases</span></li>
+          </ul>
           <ul class="tags">
             <li>NL-to-SQL</li><li>SQLite</li><li>Plotly.js</li><li>Failover</li>
           </ul>
-          <p class="card-hint">Click for details</p>
+          <p class="card-hint">Read the breakdown</p>
         </article>
 
         <article class="project-card" data-project="pokemon" tabindex="0">
           <div class="project-top">
+            <span class="project-index">03 / FINE-TUNING</span>
             <div class="project-links">
               <a href="https://huggingface.co/Rendred/vgc-critique-qlora" target="_blank" rel="noopener">Model</a>
             </div>
           </div>
           <h3>Competitive Pokémon Team-Critique LLM</h3>
-          <p>QLoRA fine-tuned 7B model that critiques Pokémon teams with fact-checked, grounded feedback.</p>
+          <p>
+            A 7B Qwen2.5 model fine-tuned with QLoRA to critique competitive teams, with
+            a deterministic fact-checker that verifies every claim the model generates
+            before it reaches the user.
+          </p>
+          <ul class="metrics">
+            <li><span class="metric-num">81.2%</span><span class="metric-label">Flaw recall</span></li>
+            <li><span class="metric-num">6,377</span><span class="metric-label">Training examples</span></li>
+          </ul>
           <ul class="tags">
             <li>Qwen2.5</li><li>QLoRA</li><li>Evaluation</li><li>Fact Checking</li>
           </ul>
-          <p class="card-hint">Click for details</p>
+          <p class="card-hint">Read the breakdown</p>
         </article>
 
         <article class="project-card" data-project="mltester" tabindex="0">
           <div class="project-top">
+            <span class="project-index">04 / AGENTIC</span>
             <div class="project-links">
               <a href="https://github.com/AkshatGupte/ML-Experiment-Tester" target="_blank" rel="noopener">GitHub</a>
             </div>
           </div>
           <h3>ML Experiment Hypothesis Tester</h3>
-          <p>An agentic experimentation framework that turns observed training failures into falsifiable hypotheses.</p>
+          <p>
+            An agentic ML experimentation framework that analyzes training runs,
+            identifies likely failure modes, and turns them into falsifiable hypotheses
+            it can then rank and test.
+          </p>
           <ul class="tags">
-            <li>Agentic ML</li><li>Debugging</li><li>Hypotheses</li>
+            <li>Agentic ML</li><li>Hypothesis Testing</li><li>Debugging</li>
           </ul>
-          <p class="card-hint">Click for details</p>
+          <p class="card-hint">Read the breakdown</p>
         </article>
 
       </div>
@@ -125,9 +169,12 @@
   </div>
 
   <footer class="footer">
-    <p>Designed &amp; built by Akshat Gupte · © <span id="year"></span></p>
+    <p>Designed and built by Akshat Gupte · © <span id="year"></span></p>
   </footer>
 
+  </div>
+
   <script src="script.js"></script>
+  <script type="module" src="background.js"></script>
 </body>
 </html>
