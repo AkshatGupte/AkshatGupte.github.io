@@ -12,6 +12,49 @@ if (toggle && links) {
   );
 }
 
+// ===== Splash text =====
+// The title screen picks a random line on each load, same as the game.
+const SPLASHES = [
+  "0.869 AUROC!",
+  "Now with 65k+ patients!",
+  "Spearman rho -0.99!",
+  "Every claim fact-checked!",
+  "Falsifiable!",
+  "4 LLM providers, 0 downtime!",
+  "6,377 training examples!",
+  "Attention is not explanation!",
+  "Retries its own SQL!",
+  "252 problems and counting!",
+  "Also try PyTorch!",
+  "Reproducible!",
+  "No fabricated metrics!",
+  "QLoRA powered!",
+  "Measured, not vibed!",
+];
+const splashEl = document.getElementById("splash");
+if (splashEl) {
+  splashEl.textContent = SPLASHES[Math.floor(Math.random() * SPLASHES.length)];
+}
+
+// ===== Advancement toast =====
+// Slides in once, the first time the contact section comes into view.
+const advancement = document.getElementById("advancement");
+const contactSection = document.getElementById("contact");
+if (advancement && contactSection) {
+  const advObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        advObserver.disconnect();
+        advancement.classList.add("show");
+        setTimeout(() => advancement.classList.remove("show"), 5000);
+      });
+    },
+    { threshold: 0.4 }
+  );
+  advObserver.observe(contactSection);
+}
+
 // ===== Project detail modal =====
 const PROJECTS = {
   temporal: {
@@ -40,8 +83,8 @@ const PROJECTS = {
     live: "https://world-cup-data-explorer.vercel.app/",
   },
   pokemon: {
-    title: "Competitive Pokémon Team-Critique Fine-Tuned LLM",
-    desc: "A 7B Qwen2.5 model fine-tuned with QLoRA to critique competitive Pokémon teams with grounded, fact-checked feedback.",
+    title: "Pokemon Team-Critique Fine-Tuned LLM",
+    desc: "A 7B Qwen2.5 model fine-tuned with QLoRA to critique competitive Pokemon teams with grounded, fact-checked feedback.",
     features: [
       "Built 6,377 training examples from Smogon stats, 1,800 game replays, and 1,002 tournament teams, including auto-generated bad teams with known flaws for accurate, label-free training data",
       "Fine-tuning lifted flaw-detection recall from 70.8% to 81.2% and groundedness from 88.3% to 93.8% while halving verbosity (10.3 to 5.9 points per critique) over a prompted baseline",
@@ -80,7 +123,7 @@ if (overlay) {
     overlay.querySelector(".modal-tags").innerHTML = p.tags
       .map((t) => `<li>${t}</li>`)
       .join("");
-    let actions = `<a class="btn btn-outline" href="${p.github}" target="_blank" rel="noopener">View Source</a>`;
+    let actions = `<a class="btn" href="${p.github}" target="_blank" rel="noopener">View Source</a>`;
     if (p.live) actions = `<a class="btn" href="${p.live}" target="_blank" rel="noopener">Live Demo</a>` + actions;
     overlay.querySelector(".modal-actions").innerHTML = actions;
 

@@ -7,63 +7,60 @@
   <meta name="description" content="Portfolio of Akshat Gupte, an AI/ML engineer working on model interpretability, agentic systems, and applied LLMs." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="textures.js"></script>
   <link rel="stylesheet" href="styles.css" />
-  <script type="importmap">
-    { "imports": { "three": "https://unpkg.com/three@0.169.0/build/three.module.js" } }
-  </script>
 </head>
 <body>
 
-  <div id="bg-field" aria-hidden="true"></div>
-
   <div class="page">
 
-  <!-- ===== Navbar ===== -->
+  <!-- ===== Hotbar nav ===== -->
   <header class="nav">
     <div class="nav-inner">
-      <a href="#top" class="logo">AG<span class="accent">.</span></a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="projects.html">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#stats">Stats</a>
-        <a href="#contact" class="btn btn-small">Contact</a>
+      <a href="#top" class="logo">AG</a>
+      <nav class="nav-links hotbar">
+        <a href="#about"><span class="slot-num">1</span>About</a>
+        <a href="projects.html"><span class="slot-num">2</span>Projects</a>
+        <a href="#skills"><span class="slot-num">3</span>Skills</a>
+        <a href="#stats"><span class="slot-num">4</span>Stats</a>
+        <a href="#contact"><span class="slot-num">5</span>Contact</a>
       </nav>
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
     </div>
   </header>
 
-  <!-- ===== Hero ===== -->
+  <!-- ===== Title screen ===== -->
   <section class="hero" id="top">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <p class="eyebrow">AI / ML Engineer</p>
-        <h1>Akshat Gupte<span class="accent">.</span></h1>
-        <h2 class="hero-sub">I build intelligent systems, then try to prove they actually work.</h2>
-        <p class="hero-desc">
-          My work sits between research and engineering: measuring whether a model's
-          attention explains its predictions, fine-tuning models to give grounded
-          feedback, and building tools that turn plain questions into real answers.
-        </p>
-        <div class="hero-cta">
-          <a href="projects.html" class="btn">View Projects</a>
-          <a href="#contact" class="btn btn-outline">Get In Touch</a>
-        </div>
-        <div class="hero-socials">
-          <a href="https://github.com/AkshatGupte" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.1-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/akshat-gupte-118250302/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.3zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zm1.8 13.1H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-1-.8-1.7-1.8-1.7z"/></svg>
-          </a>
-          <a href="https://leetcode.com/u/Akshat248/" target="_blank" rel="noopener" aria-label="LeetCode">
-            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor"><path d="M13.5 0a1.4 1.4 0 0 0-1 .4L5.7 7.2 3.2 9.8a4.9 4.9 0 0 0 0 6.8l4.9 5a4.8 4.8 0 0 0 6.9 0l3.9-4a1.4 1.4 0 0 0-2-2l-3.9 4a2 2 0 0 1-2.9 0l-4.9-5a2 2 0 0 1 0-2.8l2.5-2.5 6.8-6.9A1.4 1.4 0 0 0 13.5 0zm2.9 4.9a1.4 1.4 0 0 0-1 2.4l2.4 2.5a2 2 0 0 1 0 2.8l-.3.3a1.4 1.4 0 1 0 2 2l.3-.3a4.9 4.9 0 0 0 0-6.8l-2.5-2.5a1.4 1.4 0 0 0-.9-.4zM7.6 12.6a1.4 1.4 0 1 0 0 2.9h10.5a1.4 1.4 0 1 0 0-2.9H7.6z"/></svg>
-          </a>
+    <div class="container">
+      <div class="player-head">
+        <img src="https://avatars.githubusercontent.com/u/167355858?v=4" alt="Akshat Gupte" />
+      </div>
+
+      <div class="title-block">
+        <h1 class="mc-title">AKSHAT GUPTE</h1>
+        <p class="splash" id="splash">0.869 AUROC!</p>
+      </div>
+
+      <p class="hero-sub">AI / ML Engineer</p>
+      <p class="hero-desc">
+        I build intelligent systems, then try to prove they actually work.
+        Model interpretability, agentic workflows, and fine-tuned LLMs.
+      </p>
+
+      <div class="menu-buttons">
+        <a href="projects.html" class="btn btn-menu">Projects</a>
+        <a href="#about" class="btn btn-menu">About Me</a>
+        <div class="btn-row">
+          <a href="#contact" class="btn">Contact</a>
+          <a href="https://github.com/AkshatGupte" target="_blank" rel="noopener" class="btn">GitHub</a>
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="https://avatars.githubusercontent.com/u/167355858?v=4" alt="Akshat Gupte" class="avatar" />
+
+      <div class="hero-socials">
+        <a href="https://github.com/AkshatGupte" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
+        <a href="https://www.linkedin.com/in/akshat-gupte-118250302/" target="_blank" rel="noopener" class="btn btn-small">LinkedIn</a>
+        <a href="https://leetcode.com/u/Akshat248/" target="_blank" rel="noopener" class="btn btn-small">LeetCode</a>
       </div>
     </div>
   </section>
@@ -72,36 +69,35 @@
   <section id="about" class="section">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title"><span class="accent">01</span> About</h2>
+        <h2 class="section-title"><span class="accent">[1]</span> About</h2>
+        <p class="section-lede">Player info and current objectives.</p>
       </div>
       <div class="about-grid">
-        <div class="about-text">
+        <div class="about-text mc-panel">
           <p class="about-lead">
-            I'm a student who likes building things with machine learning, and I care
-            more about whether a system holds up under measurement than whether the
-            demo looks good.
+            I'm a student who likes building things with machine learning, and I
+            care more about whether a system holds up under measurement than
+            whether the demo looks good.
           </p>
           <p>
             Most of my recent work has been about evidence. I spent months testing
-            whether attention weights in temporal models reflect genuine reasoning or
-            just spurious correlation, using erasure, swap, and SHAP-based faithfulness
-            experiments on 65k+ patient ICU records. The interesting part was not the
-            headline accuracy, it was discovering the explanation metric was broken and
-            fixing the architecture until it was not.
+            whether attention weights in temporal models reflect genuine reasoning
+            or just spurious correlation, using erasure, swap, and SHAP-based
+            faithfulness experiments on 65k+ patient ICU records. The interesting
+            part was not the headline accuracy, it was discovering the explanation
+            metric was broken and fixing the architecture until it was not.
           </p>
           <p>
-            The same instinct shows up in the rest of my projects. A fine-tuned model
-            that critiques Pokémon teams ships with a deterministic fact-checker that
-            verifies every claim it makes. A natural-language analytics tool validates
-            and retries its own generated SQL instead of trusting the first attempt.
-            When I add a piece of infrastructure, it is usually because I watched
-            something fail without it.
+            The same instinct shows up in the rest of my projects. A fine-tuned
+            model that critiques Pokemon teams ships with a deterministic
+            fact-checker that verifies every claim it makes. A natural-language
+            analytics tool validates and retries its own generated SQL instead of
+            trusting the first attempt. When I add a piece of infrastructure, it is
+            usually because I watched something fail without it.
           </p>
-          <p>
-            Outside of projects, I'm usually working through problems on LeetCode.
-          </p>
+          <p>Outside of projects, I'm usually working through problems on LeetCode.</p>
         </div>
-        <aside>
+        <aside class="mc-panel">
           <dl class="facts">
             <div>
               <dt>Focus</dt>
@@ -112,7 +108,7 @@
               <dd>Temporal attention faithfulness research on MIMIC-IV</dd>
             </div>
             <div>
-              <dt>Open to</dt>
+              <dt>Open To</dt>
               <dd>Internships and AI/ML collaborations</dd>
             </div>
             <div>
@@ -120,57 +116,54 @@
               <dd><a href="mailto:akshatgupte24@gmail.com">akshatgupte24@gmail.com</a></dd>
             </div>
           </dl>
-          <ul class="tech-list">
-            <li>Python</li>
-            <li>PyTorch</li>
-            <li>Transformers</li>
-            <li>LangChain</li>
-            <li>TypeScript</li>
-            <li>Pandas / NumPy</li>
-          </ul>
         </aside>
       </div>
     </div>
   </section>
 
-  <!-- ===== Selected Work ===== -->
+  <!-- ===== Selected work (advancements) ===== -->
   <section id="work" class="section">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title"><span class="accent">02</span> Selected Work</h2>
-        <p class="section-lede">
-          Four projects I am actively working on. Full write-ups, metrics, and source
-          are on the projects page.
-        </p>
+        <h2 class="section-title"><span class="accent">[2]</span> Advancements</h2>
+        <p class="section-lede">Four projects I am actively working on. Full write-ups are on the projects page.</p>
       </div>
 
       <div class="feature-list">
-        <a class="feature-row" href="projects.html">
-          <span class="project-index">01</span>
+        <a class="feature-row mc-panel" href="projects.html">
+          <span class="item-slot">
+            <svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path fill="#8b4a2b" d="M2 1h8v10H2z"/><path fill="#e8dcc0" d="M3 2h6v8H3z"/><path fill="#b03030" d="M8 1h1v5H8z"/></svg>
+          </span>
           <span>
             <h3>Temporal Attention Mechanisms</h3>
             <p>Testing whether transformer attention reflects genuine clinical reasoning on MIMIC-IV ICU records.</p>
           </span>
           <span class="feature-meta">Research</span>
         </a>
-        <a class="feature-row" href="projects.html">
-          <span class="project-index">02</span>
+        <a class="feature-row mc-panel" href="projects.html">
+          <span class="item-slot">
+            <svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path fill="#4aedd9" d="M5 3h2v1H5zM4 4h4v1H4zM3 5h6v2H3zM4 7h4v1H4zM5 8h2v1H5z"/><path fill="#2fbfae" d="M3 6h6v1H3zM4 7h4v1H4zM5 8h2v1H5z"/></svg>
+          </span>
           <span>
             <h3>World Cup 2026 Data Explorer</h3>
             <p>Natural-language analytics with a validated, self-retrying NL-to-SQL pipeline and LLM failover.</p>
           </span>
           <span class="feature-meta">Live</span>
         </a>
-        <a class="feature-row" href="projects.html">
-          <span class="project-index">03</span>
+        <a class="feature-row mc-panel" href="projects.html">
+          <span class="item-slot">
+            <svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path fill="#fcee4b" d="M3 4h6v1H3zM2 5h8v3H2zM3 8h6v1H3z"/><path fill="#d9a92e" d="M2 7h8v1H2zM3 8h6v1H3z"/></svg>
+          </span>
           <span>
-            <h3>Pokémon Team-Critique LLM</h3>
+            <h3>Pokemon Team-Critique LLM</h3>
             <p>A QLoRA fine-tune of Qwen2.5 7B, paired with a deterministic fact-checker for every claim.</p>
           </span>
           <span class="feature-meta">Fine-tuning</span>
         </a>
-        <a class="feature-row" href="projects.html">
-          <span class="project-index">04</span>
+        <a class="feature-row mc-panel" href="projects.html">
+          <span class="item-slot">
+            <svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path fill="#c98b5e" d="M1 1h10v10H1z"/><path fill="#5a3b28" d="M3 3h6v6H3z"/><path fill="#e0a878" d="M5 5h2v2H5z"/></svg>
+          </span>
           <span>
             <h3>ML Experiment Hypothesis Tester</h3>
             <p>An agentic framework that turns observed training failures into falsifiable hypotheses.</p>
@@ -180,86 +173,140 @@
       </div>
 
       <div class="center">
-        <a class="btn btn-outline" href="projects.html">All Projects</a>
+        <a class="btn" href="projects.html">All Projects</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== Skills ===== -->
+  <!-- ===== Skills (inventory) ===== -->
   <section id="skills" class="section">
     <div class="container">
       <div class="section-head">
-        <h2 class="section-title"><span class="accent">03</span> Skills</h2>
-        <p class="section-lede">Things I reach for regularly, grouped by what I use them to do.</p>
+        <h2 class="section-title"><span class="accent">[3]</span> Inventory</h2>
+        <p class="section-lede">Hover any item for details. Things I reach for regularly.</p>
       </div>
       <div class="skills-grid">
-        <div class="skill-group">
+        <div class="skill-group mc-panel">
           <h3>Machine Learning</h3>
-          <ul class="tags big"><li>Deep Learning</li><li>Transformers</li><li>CNNs</li><li>Transfer Learning</li><li>QLoRA Fine-tuning</li></ul>
+          <ul class="tags big">
+            <li data-tip="PyTorch and TensorFlow">Deep Learning</li>
+            <li data-tip="Attention architectures">Transformers</li>
+            <li data-tip="Image classification">CNNs</li>
+            <li data-tip="MobileNetV2 and friends">Transfer Learning</li>
+            <li data-tip="4-bit LoRA on a 7B model">QLoRA Fine-tuning</li>
+          </ul>
         </div>
-        <div class="skill-group">
+        <div class="skill-group mc-panel">
           <h3>Interpretability</h3>
-          <ul class="tags big"><li>Attention Analysis</li><li>SHAP</li><li>Grad-CAM</li><li>Faithfulness Testing</li><li>Evaluation Design</li></ul>
+          <ul class="tags big">
+            <li data-tip="Does attention explain the output?">Attention Analysis</li>
+            <li data-tip="Shapley value attributions">SHAP</li>
+            <li data-tip="Visual explanations for CNNs">Grad-CAM</li>
+            <li data-tip="Erasure and swap experiments">Faithfulness Testing</li>
+            <li data-tip="Machine-gradeable evals">Evaluation Design</li>
+          </ul>
         </div>
-        <div class="skill-group">
+        <div class="skill-group mc-panel">
           <h3>Agentic &amp; GenAI</h3>
-          <ul class="tags big"><li>LangChain</li><li>LangGraph</li><li>Multi-Agent Systems</li><li>RAG</li><li>NL-to-SQL</li></ul>
+          <ul class="tags big">
+            <li data-tip="Chains and tool use">LangChain</li>
+            <li data-tip="Stateful agent graphs">LangGraph</li>
+            <li data-tip="Agents that coordinate">Multi-Agent Systems</li>
+            <li data-tip="Retrieval-augmented generation">RAG</li>
+            <li data-tip="Validated query generation">NL-to-SQL</li>
+          </ul>
         </div>
-        <div class="skill-group">
+        <div class="skill-group mc-panel">
           <h3>Languages &amp; Tools</h3>
-          <ul class="tags big"><li>Python</li><li>TypeScript</li><li>SQL / BigQuery</li><li>Pandas / NumPy</li><li>Git</li><li>Vercel</li></ul>
+          <ul class="tags big">
+            <li data-tip="Primary language">Python</li>
+            <li data-tip="Full-stack web work">TypeScript</li>
+            <li data-tip="MIMIC-IV extraction">SQL / BigQuery</li>
+            <li data-tip="Data wrangling">Pandas / NumPy</li>
+            <li data-tip="Version control">Git</li>
+            <li data-tip="Deployment">Vercel</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== Stats ===== -->
+  <!-- ===== Stats (XP + health) ===== -->
   <section id="stats" class="section">
     <div class="container">
-      <div class="section-head">
-        <h2 class="section-title"><span class="accent">04</span> Problem Solving</h2>
-        <p class="section-lede">Consistent practice on algorithms and data structures, mostly on LeetCode.</p>
+      <div class="section-head centered">
+        <h2 class="section-title"><span class="accent">[4]</span> Stats</h2>
+        <p class="section-lede">Consistent practice on algorithms and data structures.</p>
       </div>
+
+      <div class="xp-wrap">
+        <div class="xp-level">252</div>
+        <div class="xp-bar"><span class="xp-fill" style="width: 74%"></span></div>
+        <p class="xp-note">252 problems solved &middot; 74% toward the next milestone</p>
+      </div>
+
+      <div class="hearts" aria-label="Full health">
+        <svg class="heart" viewBox="0 0 9 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="#ff2020" d="M1 0h2v1H1zM6 0h2v1H6zM0 1h4v1H0zM5 1h4v1H5zM0 2h9v2H0zM1 4h7v1H1zM2 5h5v1H2zM3 6h3v1H3zM4 7h1v1H4z"/><path fill="#ff7070" d="M1 1h2v1H1z"/></svg>
+        <svg class="heart" viewBox="0 0 9 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="#ff2020" d="M1 0h2v1H1zM6 0h2v1H6zM0 1h4v1H0zM5 1h4v1H5zM0 2h9v2H0zM1 4h7v1H1zM2 5h5v1H2zM3 6h3v1H3zM4 7h1v1H4z"/><path fill="#ff7070" d="M1 1h2v1H1z"/></svg>
+        <svg class="heart" viewBox="0 0 9 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="#ff2020" d="M1 0h2v1H1zM6 0h2v1H6zM0 1h4v1H0zM5 1h4v1H5zM0 2h9v2H0zM1 4h7v1H1zM2 5h5v1H2zM3 6h3v1H3zM4 7h1v1H4z"/><path fill="#ff7070" d="M1 1h2v1H1z"/></svg>
+        <svg class="heart" viewBox="0 0 9 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="#ff2020" d="M1 0h2v1H1zM6 0h2v1H6zM0 1h4v1H0zM5 1h4v1H5zM0 2h9v2H0zM1 4h7v1H1zM2 5h5v1H2zM3 6h3v1H3zM4 7h1v1H4z"/><path fill="#ff7070" d="M1 1h2v1H1z"/></svg>
+        <svg class="heart" viewBox="0 0 9 8" shape-rendering="crispEdges" aria-hidden="true"><path fill="#ff2020" d="M1 0h2v1H1zM6 0h2v1H6zM0 1h4v1H0zM5 1h4v1H5zM0 2h9v2H0zM1 4h7v1H1zM2 5h5v1H2zM3 6h3v1H3zM4 7h1v1H4z"/><path fill="#ff7070" d="M1 1h2v1H1z"/></svg>
+      </div>
+
       <div class="stats-grid">
-        <div class="stat-card"><span class="stat-num">252</span><span class="stat-label">LeetCode Problems Solved</span></div>
-        <div class="stat-card"><span class="stat-num">165</span><span class="stat-label">Medium Problems</span></div>
-        <div class="stat-card"><span class="stat-num">21</span><span class="stat-label">Hard Problems</span></div>
-        <div class="stat-card"><span class="stat-num">9</span><span class="stat-label">Public Repositories</span></div>
+        <div class="stat-card mc-panel"><span class="stat-num">252</span><span class="stat-label">Problems Solved</span></div>
+        <div class="stat-card mc-panel"><span class="stat-num">165</span><span class="stat-label">Medium</span></div>
+        <div class="stat-card mc-panel"><span class="stat-num">21</span><span class="stat-label">Hard</span></div>
+        <div class="stat-card mc-panel"><span class="stat-num">9</span><span class="stat-label">Public Repos</span></div>
       </div>
+
       <div class="center">
-        <a class="btn btn-outline" href="https://leetcode.com/u/Akshat248/" target="_blank" rel="noopener">View LeetCode Profile</a>
+        <a class="btn" href="https://leetcode.com/u/Akshat248/" target="_blank" rel="noopener">View LeetCode Profile</a>
       </div>
     </div>
   </section>
 
   <!-- ===== Contact ===== -->
   <section id="contact" class="section">
-    <div class="container center">
+    <div class="container">
       <div class="section-head centered">
-        <h2 class="section-title"><span class="accent">05</span> Get In Touch</h2>
+        <h2 class="section-title"><span class="accent">[5]</span> Multiplayer</h2>
       </div>
-      <div class="contact-panel">
+      <div class="mc-panel" style="text-align: center">
         <p class="contact-desc">
           I'm open to internships, collaborations, and interesting AI/ML projects.
           My inbox is always open, so feel free to reach out.
         </p>
         <a class="btn btn-big" href="mailto:akshatgupte24@gmail.com">Say Hello</a>
         <div class="hero-socials contact-socials">
-          <a href="https://github.com/AkshatGupte" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/akshat-gupte-118250302/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://leetcode.com/u/Akshat248/" target="_blank" rel="noopener">LeetCode</a>
+          <a class="btn btn-small" href="https://github.com/AkshatGupte" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-small" href="https://www.linkedin.com/in/akshat-gupte-118250302/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-small" href="https://leetcode.com/u/Akshat248/" target="_blank" rel="noopener">LeetCode</a>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <p>Designed and built by Akshat Gupte · © <span id="year"></span></p>
+    <p>Built by Akshat Gupte &middot; <span id="year"></span></p>
   </footer>
 
   </div>
 
+  <div class="hud-corner left">Portfolio 2.0 (AI/ML Edition)</div>
+  <div class="hud-corner right">Not affiliated with Mojang</div>
+
+  <!-- Advancement toast -->
+  <div class="advancement" id="advancement" role="status" aria-live="polite">
+    <span class="item-slot">
+      <svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path fill="#fcee4b" d="M3 4h6v1H3zM2 5h8v3H2zM3 8h6v1H3z"/><path fill="#d9a92e" d="M2 7h8v1H2zM3 8h6v1H3z"/></svg>
+    </span>
+    <span>
+      <span class="advancement-title">Advancement Made!</span><br />
+      <span class="advancement-name">Reached the bottom</span>
+    </span>
+  </div>
+
   <script src="script.js"></script>
-  <script type="module" src="background.js"></script>
 </body>
 </html>
