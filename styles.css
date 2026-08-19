@@ -33,7 +33,11 @@
   --xp: #80ff20;
 
   --shadow: #3f3f3f;
-  --font: "Pixelify Sans", "Courier New", monospace;
+  /* Geist for anything you actually have to read; the pixel face is kept for
+     the one place legibility does not matter and the look does -- the title. */
+  --font: "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "Courier New", monospace;
+  --font-pixel: "Pixelify Sans", "Courier New", monospace;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,11 +52,22 @@ body {
   background-image: var(--tex-dirt);
   background-size: 64px 64px;
   image-rendering: pixelated;
-  -webkit-font-smoothing: none;
-  /* Pixelify Sans ships broken fi/fl ligatures ("workflows" renders as
-     "workAows"), so ligature substitution is turned off everywhere. */
+}
+
+/* Pixelify Sans ships broken fi/fl ligatures ("workflows" renders as
+   "workAows"), so they are disabled wherever that face is still used. */
+.mc-title, .splash {
+  font-family: var(--font-pixel);
   font-variant-ligatures: none;
   font-feature-settings: "liga" 0, "clig" 0;
+  -webkit-font-smoothing: none;
+}
+
+/* Small chrome: labels, numbers, counters */
+.slot-num, .project-index, .chest-meta, .metric-num, .metric-label,
+.facts dt, .tags li, .hud-corner, .footer, #sfx-toggle, .card-hint,
+.section-title .accent, .modal-subhead, .stat-num, .xp-level, .feature-meta {
+  font-family: var(--font-mono);
 }
 
 /* Keep the sticky hotbar from covering a section heading on anchor jumps */
@@ -274,15 +289,85 @@ h1, h2, h3, h4 { font-weight: 400; line-height: 1.25; }
 }
 
 /* ===== Advancements (project list) ===== */
-.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-.project-card { display: flex; flex-direction: column; cursor: pointer; }
-.project-card:hover, .project-card:focus-visible {
-  outline: none;
-  box-shadow:
-    inset 2px 2px 0 rgba(255, 255, 255, 0.15),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.6),
-    0 0 0 2px var(--white);
+/* ===== Projects as chests ==========================================
+   Each project is a chest with a sign nailed above it. Clicking the chest
+   swings the lid back and opens the GUI, which is what happens in the game.
+   Motion is stepped, never eased, so the lid snaps through frames.
+   =================================================================== */
+.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 22px; }
+
+.project-card {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  cursor: pointer; padding: 6px 8px 18px; background: none; border: none;
 }
+.project-card:focus-visible { outline: 3px solid var(--white); outline-offset: 4px; }
+
+/* --- the sign --- */
+.sign {
+  position: relative; z-index: 2; width: 100%; max-width: 268px;
+  padding: 11px 13px;
+  background-color: #ab8144;
+  background-image: var(--tex-plank);
+  background-size: 40px 40px;
+  background-blend-mode: multiply;
+  image-rendering: pixelated;
+  border: 3px solid #46300f;
+  box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.24), inset -2px -2px 0 rgba(0, 0, 0, 0.34);
+}
+.sign-text {
+  display: block; font-size: 0.95rem; font-weight: 600; line-height: 1.35;
+  color: #2f1f0b;                                   /* sign text is dark on oak */
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.20);
+}
+.sign-post {
+  width: 16px; height: 16px; z-index: 1;
+  background-color: #7d5a2b;
+  background-image: var(--tex-plank);
+  background-size: 28px 28px;
+  background-blend-mode: multiply;
+  image-rendering: pixelated;
+  border: 3px solid #46300f; border-top: none;
+}
+
+/* --- the chest --- */
+.chest { position: relative; width: 132px; height: 114px; margin-top: 4px; perspective: 360px; }
+.chest-lid, .chest-body {
+  position: absolute; left: 0; right: 0;
+  background-color: #70491f;
+  background-image: var(--tex-plank);
+  background-size: 44px 44px;
+  background-blend-mode: multiply;
+  image-rendering: pixelated;
+  border: 3px solid #2c1b0a;
+  box-shadow: inset 3px 3px 0 rgba(255, 255, 255, 0.12), inset -3px -3px 0 rgba(0, 0, 0, 0.44);
+}
+.chest-inner {                                       /* revealed once the lid lifts */
+  position: absolute; left: 6px; right: 6px; top: 6px; height: 42px; z-index: 0;
+  background: #150d05;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+.chest-body { top: 44px; bottom: 0; z-index: 1; }
+.chest-lid {
+  top: 0; height: 42px; z-index: 2;
+  transform-origin: center top;
+  transition: transform 0.18s steps(3, end);
+}
+.chest-latch {
+  position: absolute; left: 50%; top: 28px; margin-left: -11px; z-index: 3;
+  width: 22px; height: 28px;
+  background: #8f8f8f; border: 3px solid #2c1b0a;
+  box-shadow: inset 2px 2px 0 #c0c0c0, inset -2px -2px 0 #575757;
+  transform-origin: center top;
+  transition: transform 0.18s steps(3, end);
+}
+.project-card:hover .chest-lid,
+.project-card:focus-visible .chest-lid { transform: rotateX(-18deg); }
+.project-card.open .chest-lid { transform: rotateX(-82deg); }
+.project-card.open .chest-latch { transform: rotateX(-82deg) translateY(-2px); }
+
+.chest-meta { margin-top: 14px; font-size: 0.7rem; letter-spacing: 0.12em; color: var(--aqua); }
+.chest-teaser { margin-top: 7px; font-size: 0.88rem; color: #cfcfcf; max-width: 34ch; }
+
 .project-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
 .item-slot {
   flex: 0 0 auto; width: 46px; height: 46px; display: grid; place-items: center;
@@ -291,16 +376,16 @@ h1, h2, h3, h4 { font-weight: 400; line-height: 1.25; }
 }
 .item-slot svg { width: 30px; height: 30px; image-rendering: pixelated; }
 .project-index { font-size: 0.74rem; color: var(--gray); letter-spacing: 0.08em; }
-.project-links { margin-left: auto; display: flex; gap: 12px; font-size: 0.8rem; }
+.project-links { display: flex; gap: 14px; font-size: 0.8rem; margin-top: 10px; }
 .project-links a { color: var(--aqua); }
 .project-links a:hover { color: var(--gold); }
 .project-card h3 { font-size: 1.22rem; color: var(--gold); margin-bottom: 8px; }
-.project-card p { font-size: 0.92rem; color: #d4d4d4; flex: 1; }
 
 .metrics { list-style: none; display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
 .metric-num { display: block; font-size: 1.3rem; color: var(--green); line-height: 1.2; }
 .metric-label { display: block; font-size: 0.7rem; color: var(--gray); letter-spacing: 0.06em; text-transform: uppercase; }
-.card-hint { margin-top: 16px; font-size: 0.78rem; color: var(--gray); }
+.card-hint { margin-top: 10px; font-size: 0.72rem; color: var(--gray); }
+.project-card.open .card-hint { visibility: hidden; }
 .project-card:hover .card-hint { color: var(--gold); }
 
 /* home page work list */

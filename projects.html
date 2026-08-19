@@ -7,9 +7,9 @@
   <meta name="description" content="Selected projects by Akshat Gupte, covering interpretability research, agentic systems, data exploration, and fine-tuned LLMs." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="textures.js?v=5"></script>
-  <link rel="stylesheet" href="styles.css?v=5" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="textures.js?v=6"></script>
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
 
@@ -62,110 +62,82 @@
     <div class="container">
       <div class="section-head">
         <h2 class="section-title"><span class="accent">[2]</span> Current Projects</h2>
-        <p class="section-lede">Select any project for the full breakdown, including method and results.</p>
+        <p class="section-lede">Four chests. Open one for the full breakdown, including method and results.</p>
       </div>
 
       <div class="projects-grid">
 
-        <article class="project-card mc-panel" data-project="temporal" tabindex="0">
-          <div class="project-top">
-            <span class="item-slot">
-              <svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path fill="#8b4a2b" d="M2 1h8v10H2z"/><path fill="#e8dcc0" d="M3 2h6v8H3z"/><path fill="#b03030" d="M8 1h1v5H8z"/></svg>
-            </span>
-            <span class="project-index">01 / RESEARCH</span>
-            <div class="project-links">
-              <a href="https://github.com/AkshatGupte/Research_Temporal_Mechanisms" target="_blank" rel="noopener">GitHub</a>
-            </div>
+        <article class="project-card" data-project="temporal" tabindex="0"
+                 role="button" aria-label="Open Temporal Attention Mechanisms">
+          <div class="sign"><span class="sign-text">Temporal Attention Mechanisms</span></div>
+          <div class="sign-post"></div>
+          <div class="chest" aria-hidden="true">
+            <div class="chest-inner"></div>
+            <div class="chest-body"></div>
+            <div class="chest-lid"></div>
+            <div class="chest-latch"></div>
           </div>
-          <h3>Temporal Attention Mechanisms</h3>
-          <p>
-            Evaluated whether the attention weights of different transformer
-            architectures reflect genuine clinical reasoning, or merely correlate
-            with the outcome, across MIMIC-IV ICU records.
-          </p>
-          <ul class="metrics">
-            <li><span class="metric-num">0.869</span><span class="metric-label">AUROC</span></li>
-            <li><span class="metric-num">65k+</span><span class="metric-label">Patient records</span></li>
-          </ul>
-          <ul class="tags">
-            <li>Interpretability</li><li>MIMIC-IV</li><li>SHAP</li><li>BigQuery</li>
-          </ul>
-          <p class="card-hint">Click to open</p>
+          <p class="chest-meta">01 / RESEARCH</p>
+          <p class="chest-teaser">Does the attention actually explain the prediction, or does it just correlate with it?</p>
+          <div class="project-links">
+            <a href="https://github.com/AkshatGupte/Research_Temporal_Mechanisms" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <p class="card-hint">Click the chest to open</p>
         </article>
 
-        <article class="project-card mc-panel" data-project="worldcup2026" tabindex="0">
-          <div class="project-top">
-            <span class="item-slot">
-              <svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path fill="#4aedd9" d="M5 3h2v1H5zM4 4h4v1H4zM3 5h6v2H3zM4 7h4v1H4zM5 8h2v1H5z"/><path fill="#2fbfae" d="M3 6h6v1H3zM4 7h4v1H4zM5 8h2v1H5z"/></svg>
-            </span>
-            <span class="project-index">02 / PRODUCT</span>
-            <div class="project-links">
-              <a href="https://world-cup-data-explorer.vercel.app/" target="_blank" rel="noopener">Live</a>
-              <a href="https://github.com/AkshatGupte/WorldCup-DataExplorer" target="_blank" rel="noopener">GitHub</a>
-            </div>
+        <article class="project-card" data-project="worldcup2026" tabindex="0"
+                 role="button" aria-label="Open World Cup 2026 Data Explorer">
+          <div class="sign"><span class="sign-text">World Cup 2026 Data Explorer</span></div>
+          <div class="sign-post"></div>
+          <div class="chest" aria-hidden="true">
+            <div class="chest-inner"></div>
+            <div class="chest-body"></div>
+            <div class="chest-lid"></div>
+            <div class="chest-latch"></div>
           </div>
-          <h3>World Cup 2026 Data Explorer</h3>
-          <p>
-            A natural-language analytics tool that lets non-technical users query
-            match and player data conversationally, backed by a multi-stage
-            NL-to-SQL pipeline that validates and retries its own output.
-          </p>
-          <ul class="metrics">
-            <li><span class="metric-num">4</span><span class="metric-label">LLM providers</span></li>
-            <li><span class="metric-num">2</span><span class="metric-label">SQLite databases</span></li>
-          </ul>
-          <ul class="tags">
-            <li>NL-to-SQL</li><li>SQLite</li><li>Plotly.js</li><li>Failover</li>
-          </ul>
-          <p class="card-hint">Click to open</p>
+          <p class="chest-meta">02 / PRODUCT</p>
+          <p class="chest-teaser">Ask it in plain English. It writes the SQL, checks it, and retries when it is wrong.</p>
+          <div class="project-links">
+            <a href="https://world-cup-data-explorer.vercel.app/" target="_blank" rel="noopener">Live</a>
+            <a href="https://github.com/AkshatGupte/WorldCup-DataExplorer" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <p class="card-hint">Click the chest to open</p>
         </article>
 
-        <article class="project-card mc-panel" data-project="pokemon" tabindex="0">
-          <div class="project-top">
-            <span class="item-slot">
-              <svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path fill="#fcee4b" d="M3 4h6v1H3zM2 5h8v3H2zM3 8h6v1H3z"/><path fill="#d9a92e" d="M2 7h8v1H2zM3 8h6v1H3z"/></svg>
-            </span>
-            <span class="project-index">03 / FINE-TUNING</span>
-            <div class="project-links">
-              <a href="https://huggingface.co/Rendred/vgc-critique-qlora" target="_blank" rel="noopener">Model</a>
-            </div>
+        <article class="project-card" data-project="pokemon" tabindex="0"
+                 role="button" aria-label="Open Pokemon Team-Critique LLM">
+          <div class="sign"><span class="sign-text">Pokemon Team-Critique LLM</span></div>
+          <div class="sign-post"></div>
+          <div class="chest" aria-hidden="true">
+            <div class="chest-inner"></div>
+            <div class="chest-body"></div>
+            <div class="chest-lid"></div>
+            <div class="chest-latch"></div>
           </div>
-          <h3>Pokemon Team-Critique LLM</h3>
-          <p>
-            A 7B Qwen2.5 model fine-tuned with QLoRA to critique competitive teams,
-            with a deterministic fact-checker that verifies every claim the model
-            generates before it reaches the user.
-          </p>
-          <ul class="metrics">
-            <li><span class="metric-num">81.2%</span><span class="metric-label">Flaw recall</span></li>
-            <li><span class="metric-num">6,377</span><span class="metric-label">Training examples</span></li>
-          </ul>
-          <ul class="tags">
-            <li>Qwen2.5</li><li>QLoRA</li><li>Evaluation</li><li>Fact Checking</li>
-          </ul>
-          <p class="card-hint">Click to open</p>
+          <p class="chest-meta">03 / FINE-TUNING</p>
+          <p class="chest-teaser">A 7B fine-tune that criticises teams, with a fact-checker on every claim it makes.</p>
+          <div class="project-links">
+            <a href="https://huggingface.co/Rendred/vgc-critique-qlora" target="_blank" rel="noopener">Model</a>
+          </div>
+          <p class="card-hint">Click the chest to open</p>
         </article>
 
-        <article class="project-card mc-panel" data-project="mltester" tabindex="0">
-          <div class="project-top">
-            <span class="item-slot">
-              <svg viewBox="0 0 12 12" shape-rendering="crispEdges" aria-hidden="true"><path fill="#c98b5e" d="M1 1h10v10H1z"/><path fill="#5a3b28" d="M3 3h6v6H3z"/><path fill="#e0a878" d="M5 5h2v2H5z"/></svg>
-            </span>
-            <span class="project-index">04 / AGENTIC</span>
-            <div class="project-links">
-              <a href="https://github.com/AkshatGupte/ML-Experiment-Tester" target="_blank" rel="noopener">GitHub</a>
-            </div>
+        <article class="project-card" data-project="mltester" tabindex="0"
+                 role="button" aria-label="Open ML Experiment Hypothesis Tester">
+          <div class="sign"><span class="sign-text">ML Experiment Hypothesis Tester</span></div>
+          <div class="sign-post"></div>
+          <div class="chest" aria-hidden="true">
+            <div class="chest-inner"></div>
+            <div class="chest-body"></div>
+            <div class="chest-lid"></div>
+            <div class="chest-latch"></div>
           </div>
-          <h3>ML Experiment Hypothesis Tester</h3>
-          <p>
-            An agentic ML experimentation framework that analyzes training runs,
-            identifies likely failure modes, and turns them into falsifiable
-            hypotheses it can then rank and test.
-          </p>
-          <ul class="tags">
-            <li>Agentic ML</li><li>Hypothesis Testing</li><li>Debugging</li>
-          </ul>
-          <p class="card-hint">Click to open</p>
+          <p class="chest-meta">04 / AGENTIC</p>
+          <p class="chest-teaser">Turns a failed training run into hypotheses that can actually be falsified.</p>
+          <div class="project-links">
+            <a href="https://github.com/AkshatGupte/ML-Experiment-Tester" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <p class="card-hint">Click the chest to open</p>
         </article>
 
       </div>
@@ -193,8 +165,8 @@
   <div class="hud-corner left">Portfolio 2.0 (AI/ML Edition)</div>
   <div class="hud-corner right">Not affiliated with Mojang</div>
 
-  <script src="script.js?v=5"></script>
-  <script src="background.js?v=5"></script>
-  <script src="sound.js?v=5"></script>
+  <script src="script.js?v=6"></script>
+  <script src="background.js?v=6"></script>
+  <script src="sound.js?v=6"></script>
 </body>
 </html>

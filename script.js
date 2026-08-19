@@ -127,6 +127,17 @@ if (overlay) {
     if (p.live) actions = `<a class="btn" href="${p.live}" target="_blank" rel="noopener">Live Demo</a>` + actions;
     overlay.querySelector(".modal-actions").innerHTML = actions;
 
+    // swing the lid of the chest that was opened
+    document.querySelectorAll(".project-card.open").forEach(function (c) {
+      c.classList.remove("open");
+      c.setAttribute("aria-expanded", "false");
+    });
+    var card = document.querySelector('.project-card[data-project="' + key + '"]');
+    if (card) {
+      card.classList.add("open");
+      card.setAttribute("aria-expanded", "true");
+    }
+
     lastFocused = document.activeElement;
     overlay.hidden = false;
     document.body.classList.add("modal-open");
@@ -136,6 +147,10 @@ if (overlay) {
   function closeProject() {
     overlay.hidden = true;
     document.body.classList.remove("modal-open");
+    document.querySelectorAll(".project-card.open").forEach(function (c) {
+      c.classList.remove("open");          // lid drops shut again
+      c.setAttribute("aria-expanded", "false");
+    });
     if (lastFocused) lastFocused.focus();
   }
 
